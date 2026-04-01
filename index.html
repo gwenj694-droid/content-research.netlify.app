@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Winning Content Research Studio — NG Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0F0D08;--surface:#181510;--surface2:#201D14;--surface3:#28241A;
+  --gold:#C9A84C;--gold-light:#E2C97E;--gold-dim:rgba(201,168,76,0.12);
+  --text:#F0EDE8;--muted:#888070;--border:rgba(201,168,76,0.15);
+  --green:#22C55E;--green-dim:rgba(34,197,94,0.12);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:780px;margin:0 auto;padding:0 0 40px}
+
+.page-header{text-align:center;padding:48px 24px 40px;border-bottom:1px solid var(--border)}
+.agency-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:500;line-height:1.15;margin-bottom:16px}
+.page-title em{color:var(--gold);font-style:italic}
+.page-desc{font-size:15px;color:var(--muted);line-height:1.7;max-width:520px;margin:0 auto}
+.title-line{width:60px;height:1px;background:var(--gold);margin:16px auto}
+
+.form-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 24px 0}
+.section-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.field-group{margin-bottom:20px}
+.field-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
+.field-required{color:var(--gold)}
+.field-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;transition:border-color 0.2s;outline:none}
+.field-input:focus{border-color:rgba(201,168,76,0.5)}
+.field-input::placeholder{color:var(--muted)}
+
+.niche-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.niche-pill{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all 0.2s;font-family:'Inter',sans-serif}
+.niche-pill:hover{border-color:rgba(201,168,76,0.4);color:var(--text)}
+.niche-pill.active{background:var(--gold-dim);border-color:rgba(201,168,76,0.5);color:var(--gold)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.two-col{grid-template-columns:1fr}}
+
+.field-select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23C9A84C' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field-select option{background:#1A1810}
+
+.platform-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.platform-btn{padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:2px solid transparent;transition:all 0.2s;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:6px}
+.platform-btn.tiktok{background:#1A1A1A;border-color:#333;color:var(--text)}
+.platform-btn.tiktok.active{background:#000;border-color:#fff;color:#fff}
+.platform-btn.instagram{background:rgba(225,48,108,0.1);border-color:rgba(225,48,108,0.3);color:#E1306C}
+.platform-btn.instagram.active{background:rgba(225,48,108,0.2);border-color:#E1306C}
+.platform-btn.facebook{background:rgba(24,119,242,0.1);border-color:rgba(24,119,242,0.3);color:#1877F2}
+.platform-btn.facebook.active{background:rgba(24,119,242,0.2);border-color:#1877F2}
+
+.submit-btn{display:block;width:calc(100% - 48px);margin:20px 24px 0;background:var(--gold);color:#000;border:none;padding:18px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s}
+.submit-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* Results section */
+.results{margin:24px;display:none}
+.results.visible{display:block}
+.results-header{text-align:center;margin-bottom:24px}
+.results-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;margin-bottom:8px}
+.results-sub{font-size:14px;color:var(--muted)}
+
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:14px}
+.result-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.result-platform{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.result-score{background:var(--green-dim);color:var(--green);font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+.result-hook{font-size:16px;font-weight:600;margin-bottom:8px;line-height:1.4}
+.result-why{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.result-prompt-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.result-prompt{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;color:var(--muted);line-height:1.6}
+.copy-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--gold);cursor:pointer;margin-top:10px;font-family:'Inter',sans-serif;transition:all 0.2s}
+.copy-btn:hover{background:var(--gold-dim)}
+
+.loading{text-align:center;padding:40px;display:none}
+.loading.visible{display:block}
+.loading-text{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--muted);font-style:italic}
+.loading-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:dotPulse 1.4s ease-in-out infinite}
+.dot:nth-child(2){animation-delay:0.2s}
+.dot:nth-child(3){animation-delay:0.4s}
+@keyframes dotPulse{0%,80%,100%{opacity:0.2;transform:scale(0.8)}40%{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="agency-label">NG Intelligence Agency</div>
+  <h1 class="page-title">Winning Content<br><em>Research Studio</em></h1>
+  <div class="title-line"></div>
+  <p class="page-desc">Discover what's performing right now on TikTok Shop, Instagram and Facebook. Get the winning formula — then generate the exact image and video prompts to recreate it.</p>
+</div>
+
+<div class="form-section">
+  <div class="section-label">Your Product & Niche</div>
+  <div class="field-group">
+    <div class="field-label">Product / Niche <span class="field-required">*</span></div>
+    <input class="field-input" id="productNiche" type="text" placeholder="e.g. collagen face serum, protein powder, luxury candle, pet supplements"/>
+  </div>
+  <div class="field-label" style="margin-bottom:8px">Popular Niches — Click to Fill</div>
+  <div class="niche-pills">
+    <button class="niche-pill" onclick="fillNiche(this,'Beauty & Skincare')">Beauty & Skincare</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Fitness & Supplements')">Fitness & Supplements</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Food & Nutrition')">Food & Nutrition</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Fashion & Accessories')">Fashion & Accessories</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Home & Lifestyle')">Home & Lifestyle</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Pet Products')">Pet Products</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Hair Care')">Hair Care</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Weight Loss')">Weight Loss</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Mental Wellness')">Mental Wellness</button>
+    <button class="niche-pill" onclick="fillNiche(this,'Baby & Kids')">Baby & Kids</button>
+  </div>
+</div>
+
+<div class="form-section" style="margin-top:14px">
+  <div class="section-label">Research Settings</div>
+  <div class="two-col">
+    <div class="field-group">
+      <div class="field-label">Target Customer</div>
+      <select class="field-select" id="targetCustomer">
+        <option>General audience</option>
+        <option>Women 25–40</option>
+        <option>Women 40+</option>
+        <option>Men 18–35</option>
+        <option>Parents</option>
+        <option>Fitness enthusiasts</option>
+        <option>Health-conscious consumers</option>
+        <option>Entrepreneurs</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <div class="field-label">Content Goal</div>
+      <select class="field-select" id="contentGoal">
+        <option>Drive direct sales</option>
+        <option>Build brand awareness</option>
+        <option>Generate leads</option>
+        <option>Grow followers</option>
+        <option>Increase engagement</option>
+      </select>
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="field-label">Platforms to Research</div>
+    <div class="platform-row">
+      <button class="platform-btn tiktok active" id="btn-tiktok" onclick="togglePlatform('tiktok')">● TikTok Shop</button>
+      <button class="platform-btn instagram active" id="btn-instagram" onclick="togglePlatform('instagram')">● Instagram Reels</button>
+      <button class="platform-btn facebook active" id="btn-facebook" onclick="togglePlatform('facebook')">● Facebook Ads</button>
+    </div>
+  </div>
+  <div class="field-group" style="margin-bottom:0">
+    <div class="field-label">Additional Context (Optional)</div>
+    <input class="field-input" id="additionalContext" type="text" placeholder="e.g. luxury positioning, before/after angle, targeting mums, cruelty-free brand"/>
+  </div>
+</div>
+
+<button class="submit-btn" onclick="runResearch()">Research Winning Content →</button>
+
+<div class="loading" id="loading">
+  <div class="loading-text">Researching winning content...</div>
+  <div class="loading-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+
+<div class="results" id="results">
+  <div class="results-header">
+    <div class="results-title">Winning Content Formulas</div>
+    <div class="results-sub" id="resultsSubtitle">Top performing content for your niche</div>
+  </div>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div class="result-platform">TikTok Shop</div>
+      <div class="result-score">🔥 Trending Now</div>
+    </div>
+    <div class="result-hook" id="hook1">Before/After Transformation — The Proof Formula</div>
+    <div class="result-why" id="why1">Split-screen before/after content consistently outperforms all other formats in this niche. Viewers stop scrolling because of the visual contrast. The key is showing a real, believable transformation within the first 2 seconds.</div>
+    <div class="result-prompt-label">Image Prompt →</div>
+    <div class="result-prompt" id="prompt1">A striking split-screen promotional image. Left side: dull, tired-looking skin with visible concerns. Right side: the same woman with glowing, radiant skin holding the product. Text overlay: "14 days later". Luxury bathroom setting, warm lighting, magazine quality.</div>
+    <button class="copy-btn" onclick="copyPrompt('prompt1')">📋 Copy Prompt</button>
+  </div>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div class="result-platform">Instagram Reels</div>
+      <div class="result-score">📈 High Engagement</div>
+    </div>
+    <div class="result-hook" id="hook2">The "I Tried It So You Don't Have To" — Honest Review</div>
+    <div class="result-why" id="why2">Authentic, honest review-style content builds massive trust. The audience feels like they're getting insider knowledge. This format drives high save rates and direct purchase intent, especially when the creator seems relatable.</div>
+    <div class="result-prompt-label">Image Prompt →</div>
+    <div class="result-prompt" id="prompt2">Candid lifestyle photo of a real-looking woman in her 30s, casual home setting, holding the product and looking directly at camera with an honest, warm expression. Natural lighting, slightly imperfect — feels real not staged. Text: "My honest thoughts after 30 days".</div>
+    <button class="copy-btn" onclick="copyPrompt('prompt2')">📋 Copy Prompt</button>
+  </div>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div class="result-platform">Facebook Ads</div>
+      <div class="result-score">💰 High ROAS</div>
+    </div>
+    <div class="result-hook" id="hook3">The Problem/Solution — Direct Response Formula</div>
+    <div class="result-why" id="why3">Direct response ads that lead with the problem outperform lifestyle ads 3:1 on Facebook. The audience immediately self-identifies with the problem, making them highly receptive to the solution. Works best with a clear, specific claim.</div>
+    <div class="result-prompt-label">Image Prompt →</div>
+    <div class="result-prompt" id="prompt3">Professional advertising photo split into two panels. Top panel: frustrated woman looking at skin concern in mirror, muted colours. Bottom panel: same woman smiling confidently, holding the product, vibrant colours. Bold text overlay: "Finally. Something that actually works." Premium quality, 1:1 format for Facebook feed.</div>
+    <button class="copy-btn" onclick="copyPrompt('prompt3')">📋 Copy Prompt</button>
+  </div>
+</div>
+
+<script>
+function fillNiche(el, niche){
+  document.querySelectorAll('.niche-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('productNiche').value = niche;
+}
+
+function togglePlatform(p){
+  document.getElementById('btn-'+p).classList.toggle('active');
+}
+
+async function runResearch(){
+  const niche = document.getElementById('productNiche').value.trim();
+  if(!niche){
+    document.getElementById('productNiche').style.borderColor = 'rgba(239,68,68,0.5)';
+    document.getElementById('productNiche').focus();
+    return;
+  }
+  document.getElementById('productNiche').style.borderColor = '';
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('loading').classList.add('visible');
+
+  try {
+    const res = await fetch('/.netlify/functions/research', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        niche,
+        audience: document.getElementById('targetCustomer').value,
+        goal: document.getElementById('contentGoal').value,
+        platforms: ['tiktok','instagram','facebook'].filter(p => document.getElementById('btn-'+p)?.classList.contains('active')).join(', '),
+        context: document.getElementById('additionalContext').value
+      })
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Research failed');
+
+    // Update result cards with real data
+    data.formulas.forEach((f, i) => {
+      const n = i + 1;
+      if (document.getElementById('hook'+n)) {
+        document.getElementById('hook'+n).textContent = f.name;
+        document.getElementById('why'+n).textContent = f.why;
+        document.getElementById('prompt'+n).textContent = f.prompt;
+        document.querySelector(`.result-card:nth-child(${n}) .result-platform`).textContent = f.platform;
+        document.querySelector(`.result-card:nth-child(${n}) .result-score`).textContent = f.score;
+      }
+    });
+
+    document.getElementById('loading').classList.remove('visible');
+    document.getElementById('resultsSubtitle').textContent = 'Top performing content for: ' + niche;
+    document.getElementById('results').classList.add('visible');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+
+  } catch(err) {
+    document.getElementById('loading').classList.remove('visible');
+    alert('Error: ' + err.message);
+  }
+}
+
+function copyPrompt(id){
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    event.target.textContent = '✓ Copied!';
+    setTimeout(()=>event.target.textContent='📋 Copy Prompt',2000);
+  });
+}
+</script>
+</body>
+</html>
