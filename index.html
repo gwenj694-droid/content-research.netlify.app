@@ -14,14 +14,14 @@
   --green:#22C55E;--green-dim:rgba(34,197,94,0.12);
 }
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:780px;margin:0 auto;padding:0 0 40px}
-
+ 
 .page-header{text-align:center;padding:48px 24px 40px;border-bottom:1px solid var(--border)}
 .agency-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:500;line-height:1.15;margin-bottom:16px}
 .page-title em{color:var(--gold);font-style:italic}
 .page-desc{font-size:15px;color:var(--muted);line-height:1.7;max-width:520px;margin:0 auto}
 .title-line{width:60px;height:1px;background:var(--gold);margin:16px auto}
-
+ 
 .form-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 24px 0}
 .section-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border)}
 .field-group{margin-bottom:20px}
@@ -30,18 +30,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .field-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;transition:border-color 0.2s;outline:none}
 .field-input:focus{border-color:rgba(201,168,76,0.5)}
 .field-input::placeholder{color:var(--muted)}
-
+ 
 .niche-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .niche-pill{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all 0.2s;font-family:'Inter',sans-serif}
 .niche-pill:hover{border-color:rgba(201,168,76,0.4);color:var(--text)}
 .niche-pill.active{background:var(--gold-dim);border-color:rgba(201,168,76,0.5);color:var(--gold)}
-
+ 
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:500px){.two-col{grid-template-columns:1fr}}
-
+ 
 .field-select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23C9A84C' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 .field-select option{background:#1A1810}
-
+ 
 .platform-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .platform-btn{padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:2px solid transparent;transition:all 0.2s;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:6px}
 .platform-btn.tiktok{background:#1A1A1A;border-color:#333;color:var(--text)}
@@ -50,17 +50,17 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .platform-btn.instagram.active{background:rgba(225,48,108,0.2);border-color:#E1306C}
 .platform-btn.facebook{background:rgba(24,119,242,0.1);border-color:rgba(24,119,242,0.3);color:#1877F2}
 .platform-btn.facebook.active{background:rgba(24,119,242,0.2);border-color:#1877F2}
-
+ 
 .submit-btn{display:block;width:calc(100% - 48px);margin:20px 24px 0;background:var(--gold);color:#000;border:none;padding:18px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s}
 .submit-btn:hover{background:var(--gold-light);transform:translateY(-1px)}
-
+ 
 /* Results section */
 .results{margin:24px;display:none}
 .results.visible{display:block}
 .results-header{text-align:center;margin-bottom:24px}
 .results-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;margin-bottom:8px}
 .results-sub{font-size:14px;color:var(--muted)}
-
+ 
 .result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:14px}
 .result-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
 .result-platform{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:600}
@@ -71,7 +71,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .result-prompt{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:12px;color:var(--muted);line-height:1.6}
 .copy-btn{background:transparent;border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--gold);cursor:pointer;margin-top:10px;font-family:'Inter',sans-serif;transition:all 0.2s}
 .copy-btn:hover{background:var(--gold-dim)}
-
+ 
 .loading{text-align:center;padding:40px;display:none}
 .loading.visible{display:block}
 .loading-text{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--muted);font-style:italic}
@@ -83,14 +83,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 </style>
 </head>
 <body>
-
+ 
 <div class="page-header">
   <div class="agency-label">NG Intelligence Agency</div>
   <h1 class="page-title">Winning Content<br><em>Research Studio</em></h1>
   <div class="title-line"></div>
   <p class="page-desc">Discover what's performing right now on TikTok Shop, Instagram and Facebook. Get the winning formula — then generate the exact image and video prompts to recreate it.</p>
 </div>
-
+ 
 <div class="form-section">
   <div class="section-label">Your Product & Niche</div>
   <div class="field-group">
@@ -111,7 +111,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <button class="niche-pill" onclick="fillNiche(this,'Baby & Kids')">Baby & Kids</button>
   </div>
 </div>
-
+ 
 <div class="form-section" style="margin-top:14px">
   <div class="section-label">Research Settings</div>
   <div class="two-col">
@@ -152,20 +152,20 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <input class="field-input" id="additionalContext" type="text" placeholder="e.g. luxury positioning, before/after angle, targeting mums, cruelty-free brand"/>
   </div>
 </div>
-
+ 
 <button class="submit-btn" onclick="runResearch()">Research Winning Content →</button>
-
+ 
 <div class="loading" id="loading">
   <div class="loading-text">Researching winning content...</div>
   <div class="loading-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
 </div>
-
+ 
 <div class="results" id="results">
   <div class="results-header">
     <div class="results-title">Winning Content Formulas</div>
     <div class="results-sub" id="resultsSubtitle">Top performing content for your niche</div>
   </div>
-
+ 
   <div class="result-card">
     <div class="result-card-header">
       <div class="result-platform">TikTok Shop</div>
@@ -177,7 +177,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div class="result-prompt" id="prompt1">A striking split-screen promotional image. Left side: dull, tired-looking skin with visible concerns. Right side: the same woman with glowing, radiant skin holding the product. Text overlay: "14 days later". Luxury bathroom setting, warm lighting, magazine quality.</div>
     <button class="copy-btn" onclick="copyPrompt('prompt1')">📋 Copy Prompt</button>
   </div>
-
+ 
   <div class="result-card">
     <div class="result-card-header">
       <div class="result-platform">Instagram Reels</div>
@@ -189,7 +189,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <div class="result-prompt" id="prompt2">Candid lifestyle photo of a real-looking woman in her 30s, casual home setting, holding the product and looking directly at camera with an honest, warm expression. Natural lighting, slightly imperfect — feels real not staged. Text: "My honest thoughts after 30 days".</div>
     <button class="copy-btn" onclick="copyPrompt('prompt2')">📋 Copy Prompt</button>
   </div>
-
+ 
   <div class="result-card">
     <div class="result-card-header">
       <div class="result-platform">Facebook Ads</div>
@@ -202,18 +202,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
     <button class="copy-btn" onclick="copyPrompt('prompt3')">📋 Copy Prompt</button>
   </div>
 </div>
-
+ 
 <script>
 function fillNiche(el, niche){
   document.querySelectorAll('.niche-pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('productNiche').value = niche;
 }
-
+ 
 function togglePlatform(p){
   document.getElementById('btn-'+p).classList.toggle('active');
 }
-
+ 
 async function runResearch(){
   const niche = document.getElementById('productNiche').value.trim();
   if(!niche){
@@ -224,7 +224,7 @@ async function runResearch(){
   document.getElementById('productNiche').style.borderColor = '';
   document.getElementById('results').classList.remove('visible');
   document.getElementById('loading').classList.add('visible');
-
+ 
   try {
     const res = await fetch('/.netlify/functions/research', {
       method: 'POST',
@@ -237,33 +237,45 @@ async function runResearch(){
         context: document.getElementById('additionalContext').value
       })
     });
-
+ 
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Research failed');
-
+ 
     // Update result cards with real data
+    // Rebuild results cards dynamically
+    const resultsDiv = document.getElementById('results');
+    // Remove old cards
+    resultsDiv.querySelectorAll('.result-card').forEach(c => c.remove());
+ 
     data.formulas.forEach((f, i) => {
-      const n = i + 1;
-      if (document.getElementById('hook'+n)) {
-        document.getElementById('hook'+n).textContent = f.name;
-        document.getElementById('why'+n).textContent = f.why;
-        document.getElementById('prompt'+n).textContent = f.prompt;
-        document.querySelector(`.result-card:nth-child(${n}) .result-platform`).textContent = f.platform;
-        document.querySelector(`.result-card:nth-child(${n}) .result-score`).textContent = f.score;
-      }
+      const card = document.createElement('div');
+      card.className = 'result-card';
+      card.innerHTML = `
+        <div class="result-card-header">
+          <div class="result-platform">${f.platform || 'Platform'}</div>
+          <div class="result-score">${f.score || 'Top Result'}</div>
+        </div>
+        <div class="result-hook">${f.name || ''}</div>
+        <div class="result-why">${f.why || ''}</div>
+        <div class="result-prompt-label">Image Prompt →</div>
+        <div class="result-prompt" id="prompt${i+1}">${f.prompt || ''}</div>
+        <button class="copy-btn" onclick="copyPrompt('prompt${i+1}')">📋 Copy Prompt</button>
+      `;
+      // Insert before the subtitle but inside results
+      resultsDiv.querySelector('.results-header').after(card);
     });
-
+ 
     document.getElementById('loading').classList.remove('visible');
     document.getElementById('resultsSubtitle').textContent = 'Top performing content for: ' + niche;
     document.getElementById('results').classList.add('visible');
     document.getElementById('results').scrollIntoView({behavior:'smooth'});
-
+ 
   } catch(err) {
     document.getElementById('loading').classList.remove('visible');
     alert('Error: ' + err.message);
   }
 }
-
+ 
 function copyPrompt(id){
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text).then(()=>{
@@ -274,3 +286,4 @@ function copyPrompt(id){
 </script>
 </body>
 </html>
+ 
